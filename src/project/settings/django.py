@@ -15,7 +15,7 @@ SITE_ROOT = root()
 
 DEBUG = env('DEBUG', default=False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
 INSTALLED_APPS = DJANGO_APPS + CONTRIB_APPS + PROJECT_APPS
 
@@ -48,7 +48,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 DATABASES = {
     'default': env.db(default='postgresql://postgres@localhost:5432/polls_db')
